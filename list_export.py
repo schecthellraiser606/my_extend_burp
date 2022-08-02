@@ -11,6 +11,9 @@ def list_export(filepath):
             elif "\'" in script and '\"' not in script:
                 parse = f'\"{script}\",'
                 new_scripts.append(parse)
+            elif '\"' not in script and "\'" not in script:
+                parse = f'\"{script}\",'
+                new_scripts.append(parse)
     return new_scripts
   
 
