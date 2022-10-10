@@ -214,7 +214,7 @@ class BurpExtender(IBurpExtender, IIntruderPayloadGeneratorFactory):
         return
     
     def getGeneratorName(self):
-        return "Windows cmd Injection Payload Generator"
+        return "SQL Auth_Bypass Payload Generator"
 
     def createNewInstance(self, attack):
         return BurpFuzzer(self, attack)
