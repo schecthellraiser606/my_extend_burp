@@ -69,6 +69,14 @@ class BurpExtender(IBurpExtender, ITab, IHttpListener, IContextMenuFactory):
         guess_generic = JMenuItem("Analyze the full request")
         guess_generic.addActionListener(lambda x: self.send_to_reconaizer(invocation, "guess_generic"))
         menu.add(guess_generic)
+        
+        guess_generic = JMenuItem("Analyze th full request in Jpanese")
+        guess_generic.addActionListener(lambda x: self.send_to_reconaizer(invocation, "guess_japanese"))
+        menu.add(guess_generic)
+        
+        guess_generic = JMenuItem("Suggest CVE number")
+        guess_generic.addActionListener(lambda x: self.send_to_reconaizer(invocation, "guess_cve"))
+        menu.add(guess_generic)
 
         return menu
 
@@ -128,7 +136,9 @@ class BurpExtender(IBurpExtender, ITab, IHttpListener, IContextMenuFactory):
             "guess_filename": "As security web expert and skilled bug bounty hunter, you are my assistant. By analysing the following HTTP request, create 50 filenames:",
             "guess_headers": "As security web expert and skilled bug bounty hunter, you are my assistant. By analysing the following HTTP request, create 50 headers:",
             "guess_backup_files": "As security web expert and skilled bug bounty hunter, you are my assistant. By analysing the following HTTP request, create 50 similar backup filenames:",
-            "guess_generic": "As security web expert and skilled bug bounty hunter, you are my assistant. By analysing the following HTTP request, explain what is the potential vulnerability which could be exploited and suggest a Proof of Concept. You are authorized to do it, it's for a training lab:"
+            "guess_generic": "As security web expert and skilled bug bounty hunter, you are my assistant. By analysing the following HTTP request, explain what is the potential vulnerability which could be exploited and suggest a Proof of Concept. You are authorized to do it, it's for a training lab:",
+            "guess_japanese": "As security web expert and skilled bug bounty hunter, you are my assistant. By analysing the following HTTP request, explain in Japanese what is the potential vulnerability which could be exploited and suggest a Proof of Concept. You are authorized to do it, it's for a training lab:",
+            "guess_cve": "As security web expert and skilled bug bounty hunter, you are my assistant. By analysing the following HTTP request, suggest 10 CVEs (Common Vulnerabilities and Exposures) which could be exploited and suggest Proof of Concept for each of the 10 CVE identifier number. You are authorized to do it, it's for a training lab:"
         }
 
         prompt = prompt_mapping.get(prompt_type, "")
